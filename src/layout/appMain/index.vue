@@ -4,7 +4,7 @@ import { } from 'vue'
 
 <template>
   <div class="app-main">
-    main
+    <router-view />
   </div>
 </template>
 

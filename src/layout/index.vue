@@ -17,6 +17,6 @@ const sidebarBackgroundColor = ref('#2b2e31')
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import './index.scss';
 </style>

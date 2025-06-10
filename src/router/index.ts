@@ -6,11 +6,31 @@ const router = createRouter(
     routes: [
       {
         path: '/',
-        component: () => import('@/views/demo.vue'),
+        redirect: '/dashboard',
       },
       {
+        path: '/dashboard',
+        component: () => import('@/views/Dashboard.vue'),
+      },
+      {
+        path: '/stream-tasks',
+        component: () => import('@/views/StreamTasks.vue'),
+      },
+      {
+        path: '/users',
+        component: () => import('@/views/Users.vue'),
+      },
+      {
+        path: '/logs',
+        component: () => import('@/views/Logs.vue'),
+      },
+      // {
+      //   path: '/settings',
+      //   component: () => import('@/views/Settings.vue'),
+      // },
+      {
         path: '/:catchAll(.*)',
-        redirect: '/404',
+        redirect: '/dashboard',
       },
     ],
   },
