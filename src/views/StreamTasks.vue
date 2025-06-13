@@ -68,13 +68,12 @@ function disconnectClient(client: any) {
 
 <template>
   <el-card>
-    <h2>监控管理</h2>
     <div style="margin-bottom: 16px;">
       <b>当前连接数：</b>
       <span style="font-size: 1.2em; color: #007bff;">{{ total }} 个客户端</span>
       <span style="margin-left: 24px; color: #888; font-size: 13px;">更新时间：{{ lastUpdate }}（每 5 秒自动刷新）</span>
     </div>
-    <el-table :data="pagedClients" size="small" style="width: 100%;">
+    <el-table :data="pagedClients" style="width: 100%;">
       <el-table-column prop="id" label="客户端 ID" min-width="120" />
       <el-table-column prop="ip" label="IP 地址" min-width="120" />
       <el-table-column prop="time" label="连接时间" min-width="100" />

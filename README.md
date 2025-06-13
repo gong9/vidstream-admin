@@ -1,10 +1,5 @@
-# vue 项目模版
+# 推流管理
+> 尝试用cursor搭建一个推流管理项目
 
-## feature
 
-- vite
-- vue3+ts
-- 支持jsx
-- pinia
-- tailwind
 

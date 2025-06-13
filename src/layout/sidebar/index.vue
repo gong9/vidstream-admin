@@ -36,15 +36,15 @@ watchPostEffect(() => {
       <el-menu-item index="/dashboard">
         仪表盘
       </el-menu-item>
+      <el-menu-item index="/service-manager">
+        服务管理
+      </el-menu-item>
       <el-menu-item index="/stream-tasks">
         监控管理
       </el-menu-item>
       <el-menu-item index="/logs">
         日志管理
       </el-menu-item>
-      <!-- <el-menu-item index="/settings">
-          系统设置
-        </el-menu-item> -->
       <el-menu-item index="/users">
         用户管理
       </el-menu-item>

@@ -1,8 +1,6 @@
 import type { AxiosInstance } from 'axios'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
-import localstorage from '@/utils/localstorage'
-import { TOKEN } from '@/constant'
 
 const aixosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -11,11 +9,6 @@ const aixosInstance: AxiosInstance = axios.create({
 
 aixosInstance.interceptors.request.use(
   (config) => {
-    config.headers!.icode = '47CD3D47C575726C'
-
-    if (localstorage.getItem(TOKEN))
-      config.headers!.Authorization = `${localstorage.getItem(TOKEN)}`
-
     return config
   },
 )

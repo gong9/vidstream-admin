@@ -24,6 +24,10 @@ const router = createRouter(
         path: '/logs',
         component: () => import('@/views/Logs.vue'),
       },
+      {
+        path: '/service-manager',
+        component: () => import('@/views/ServiceManager.vue'),
+      },
       // {
       //   path: '/settings',
       //   component: () => import('@/views/Settings.vue'),
