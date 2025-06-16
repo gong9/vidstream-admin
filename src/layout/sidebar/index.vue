@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { onMounted, ref, watchPostEffect } from 'vue'
+import { computed, onMounted, ref, watchPostEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import injectionJs2Css from '../../utils/injectionJs2Css'
 const props = defineProps({
@@ -11,6 +11,11 @@ const props = defineProps({
 
 const sidebarRef = ref<HTMLDivElement | null>(null)
 const route = useRoute()
+const activeMenu = computed(() => {
+  if (route.path === '/stream-tasks')
+    return '/service-manager'
+  return route.path
+})
 
 watchPostEffect(() => {
   injectionJs2Css(
@@ -28,7 +33,7 @@ watchPostEffect(() => {
       推流管理
     </div>
     <el-menu
-      :default-active="route.path"
+      :default-active="activeMenu"
       class="el-menu-vertical-demo"
       background-color="transparent"
       router
@@ -38,9 +43,6 @@ watchPostEffect(() => {
       </el-menu-item>
       <el-menu-item index="/service-manager">
         服务管理
-      </el-menu-item>
-      <el-menu-item index="/stream-tasks">
-        监控管理
       </el-menu-item>
       <el-menu-item index="/logs">
         日志管理

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 // @ts-expect-error
 import { ElMessage, ElMessageBox } from 'element-plus'
@@ -64,10 +65,17 @@ function disconnectClient(client: any) {
     ElMessage.success('已断开连接')
   })
 }
+
+const route = useRoute()
+const currentServiceName = computed(() => route.query.name || '')
 </script>
 
 <template>
   <el-card>
+    <div v-if="currentServiceName" style="margin-bottom: 16px;">
+      <b>当前服务：</b>
+      <span style="font-size: 1.1em; color: #007bff;">{{ currentServiceName }}</span>
+    </div>
     <div style="margin-bottom: 16px;">
       <b>当前连接数：</b>
       <span style="font-size: 1.2em; color: #007bff;">{{ total }} 个客户端</span>

@@ -13,10 +13,6 @@ const router = createRouter(
         component: () => import('@/views/Dashboard.vue'),
       },
       {
-        path: '/stream-tasks',
-        component: () => import('@/views/StreamTasks.vue'),
-      },
-      {
         path: '/users',
         component: () => import('@/views/Users.vue'),
       },
@@ -27,6 +23,14 @@ const router = createRouter(
       {
         path: '/service-manager',
         component: () => import('@/views/ServiceManager.vue'),
+      },
+      {
+        path: '/stream-tasks',
+        component: () => import('@/views/StreamTasks.vue'),
+      },
+      {
+        path: '/debug',
+        component: () => import('@/views/DebugPage.vue'),
       },
       // {
       //   path: '/settings',
