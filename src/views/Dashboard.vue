@@ -10,21 +10,21 @@
     </el-card>
     <div style="margin-top: 20px; display: flex; gap: 20px;">
       <el-card style="flex:1;">
-        <div>在线推流数</div>
+        <div>推流服务数</div>
         <div style="font-size: 2em;">
           12
         </div>
       </el-card>
       <el-card style="flex:1;">
-        <div>服务器带宽(Mbps)</div>
+        <div>在线推流数</div>
         <div style="font-size: 2em;">
-          320
+          42
         </div>
       </el-card>
       <el-card style="flex:1;">
         <div>异常流数</div>
         <div style="font-size: 2em; color: red;">
-          1
+          0
         </div>
       </el-card>
     </div>
