@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+// @ts-expect-error
 import { ArrowLeft } from '@element-plus/icons-vue'
 const router = useRouter()
 // 这里可以添加调试相关的逻辑
