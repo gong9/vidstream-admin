@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 // @ts-expect-error
 import { ElMessage, ElMessageBox } from 'element-plus'
+// @ts-expect-error
+import { ArrowLeft } from '@element-plus/icons-vue'
 
 // mock 当前连接数和时间
 const total = ref(6)
@@ -68,10 +70,24 @@ function disconnectClient(client: any) {
 
 const route = useRoute()
 const currentServiceName = computed(() => route.query.name || '')
+const router = useRouter()
 </script>
 
 <template>
   <el-card>
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 16px;">
+      <el-button
+        type="primary"
+        size="large"
+        style="font-weight: bold;"
+        @click="router.push('/service-manager')"
+      >
+        <el-icon style="vertical-align: middle; margin-right: 4px;">
+          <ArrowLeft />
+        </el-icon>
+        返回
+      </el-button>
+    </div>
     <div v-if="currentServiceName" style="margin-bottom: 16px;">
       <b>当前服务：</b>
       <span style="font-size: 1.1em; color: #007bff;">{{ currentServiceName }}</span>
